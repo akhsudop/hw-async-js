@@ -11,6 +11,20 @@ const gallery = document.querySelector('.gallery');
 const loadBtn = document.querySelector('.load-more--btn');
 const input = document.querySelector('.input');
 
+// Adding a smooth scroll for the page
+
+const scrollAdding = heightIndex => {
+  const { height: cardHeight } =
+    gallery.firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * heightIndex,
+    behavior: 'smooth',
+  });
+};
+
+//
+
 let searchVal = '';
 API_KEY = '35565772-7bd4f47208013e8d69d75afde';
 let page = 1;
@@ -32,10 +46,13 @@ const handlerInput = e => {
         renderImages(hits);
         simpleLightbox = new SimpleLightbox('.gallery a').refresh();
         loadBtn.classList.remove('invisible');
+        scrollAdding(1);
       }
     });
   }
 };
+
+//
 
 const handlerLoadBtn = () => {
   page++;
@@ -48,11 +65,12 @@ const handlerLoadBtn = () => {
     } else {
       renderImages(hits);
       simpleLightBox = new SimpleLightbox('.gallery a').refresh();
+      scrollAdding(1.7);
     }
   });
 };
 
-loadBtn.addEventListener('click', handlerLoadBtn);
+// remove DOM el after clearing the input
 
 const clearGalery = e => {
   if (!e.currentTarget.value) {
@@ -60,6 +78,7 @@ const clearGalery = e => {
     gallery.innerHTML = '';
   }
 };
-form.addEventListener('submit', handlerInput);
 
+form.addEventListener('submit', handlerInput);
+loadBtn.addEventListener('click', handlerLoadBtn);
 input.addEventListener('input', clearGalery);
