@@ -7,12 +7,33 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <input type="search" id="search-input" placeholder="Search images..." />
-      <button type="submit" class="search-button">Search</button>
+    <header class="header">
+      <form class="search-form header__form" id="search-form">
+        <div>
+          <input
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search images..."
+            class="input"
+          />
+          <button type="submit" class="header__form-btn">
+            <img src="./svg/search-svgrepo-com.svg" alt="search" width="20" />
+          </button>
+        </div>
+      </form>
     </header>
     <main>
-      <ul class="imgs-list"></ul>
+      <div class="gallery">
+        <!-- Obraz karty -->
+      </div>
+      <div class="load-more">
+        <button type="button" class="load-more--btn invisible">
+          Load more
+        </button>
+      </div>
     </main>
+
+    <script src="index.js" type="module"></script>
   </body>
 </html>
