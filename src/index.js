@@ -28,6 +28,7 @@ const handlerInput = e => {
         );
       } else {
         gallery.innerHTML = '';
+        Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
         renderImages(hits);
         simpleLightbox = new SimpleLightbox('.gallery a').refresh();
         loadBtn.classList.remove('invisible');
