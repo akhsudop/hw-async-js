@@ -1,4 +1,4 @@
-import simpleLightbox from 'simplelightbox';
+import SimpleLightbox from 'simplelightbox';
 import Notiflix from 'notiflix';
 import { renderImages } from './js/renderImages';
 import { getImages, limit } from './js/getImages';
