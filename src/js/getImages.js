@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const limit = 40;
+const API_KEY = '35565772-7bd4f47208013e8d69d75afde';
 
 const getImages = async (searchVal, page) => {
   const params = new URLSearchParams({
