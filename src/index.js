@@ -26,7 +26,7 @@ const scrollAdding = heightIndex => {
 //
 
 let searchVal = '';
-API_KEY = '35565772-7bd4f47208013e8d69d75afde';
+const API_KEY = '35565772-7bd4f47208013e8d69d75afde';
 let page = 1;
 
 const handlerInput = e => {
